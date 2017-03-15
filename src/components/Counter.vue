@@ -1,6 +1,6 @@
 <template>
   <div class="counter">
-    <p>Clicked: {{ $store.state.count }} times, count is {{ evenOrOdd }}, total is {{ $store.state.total }}.</p>
+    <p>Clicked: {{ $store.state.count }} times, count is {{ evenOrOdd }}.</p>
 
     <div class="btn-group" role="group" aria-label="Counter buttons">
       <button @click="increment" type="button" class="btn btn-primary">+</button>

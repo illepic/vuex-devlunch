@@ -3,35 +3,39 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+/**
+ * STATE
+ */
 const state = {
   count: 0,
-  total: 0,
   menuOpen: false,
 }
 
+/**
+ * MUTATIONS
+ */
 const mutations = {
   INCREMENT(state) {
     state.count++
-    state.total++
   },
   INCREMENT_BY_NUMBER(state, num) {
     const intNum = parseInt(num, 10);
     state.count = state.count + intNum
-    state.total = state.total + intNum
   },
   DECREMENT(state) {
     state.count--
-    state.total--
   },
   WIPE(state) {
     state.count = 0
-    state.total = 0
   },
   MENU_TOGGLE(state) {
     state.menuOpen = !state.menuOpen
-  }
+  },
 }
 
+/**
+ * ACTIONS
+ */
 const actions = {
   increment: ({ commit }) => commit('INCREMENT'),
   decrement: ({ commit }) => commit('DECREMENT'),
@@ -53,9 +57,12 @@ const actions = {
   toggleMenu: ({ commit }) => commit('MENU_TOGGLE'),
 }
 
+/**
+ * GETTERS
+ */
 const getters = {
   evenOrOdd: state => state.count % 2 === 0 ? 'even' : 'odd',
-  menuOpen: state => state.menuOpen
+  menuOpen: state => state.menuOpen,
 }
 
 export default new Vuex.Store({
